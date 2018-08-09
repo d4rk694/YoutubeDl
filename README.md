@@ -4,7 +4,7 @@ Uses python 3
 Tool that has for purpose to download a playlist from youtube 
 Uses the library pafy : https://pythonhosted.org/Pafy/
 
-To install it :
+To install it :\n
 Clone it
 Install python 3 
 pip3 install pafy 
