@@ -1,31 +1,20 @@
 YoutubeDl
 
 
-Uses python 3
+Uses python 3<br />
+Tool that has for purpose to download a playlist from youtube <br />
+Uses the library pafy : https://pythonhosted.org/Pafy/ <br />
 
-Tool that has for purpose to download a playlist from youtube 
+To install it : <br />
+Clone it <br />
+Install python 3 <br /> 
+pip3 install pafy <br />
+pip3 install youtube-dl <br />
+pip3 install pyqt5 <br />
 
-Uses the library pafy : https://pythonhosted.org/Pafy/
+run youtubedl.py <br />
 
-
-To install it :
-
-Clone it
-
-Install python 3 
-
-pip3 install pafy 
-
-pip3 install youtube-dl
-
-pip3 install pyqt5
-
-
-run youtubedl.py
-
-
-mainwindow.ui is the graphical interface open it using QTCreator
-
+mainwindow.ui is the graphical interface open it using QTCreator <br />
 
 TODO 
 - Dl format mp3 
