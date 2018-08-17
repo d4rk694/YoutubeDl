@@ -18,6 +18,9 @@ mainwindow.ui is the graphical interface open it using QTCreator <br />
 - icon + task bar icon
 - déplacer .exe
 - détecter si vidéo seule ou pliste
-- renommer et garder "ordre"Pliste
 - reset tout après 1e utilisation
 - import automatique méthode
+- Verifier remplacement des / et \ dans le nom des videos sur windows
+
+## Done
+- renommer et garder "ordre"Pliste
