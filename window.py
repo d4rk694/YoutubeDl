@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets, sip
 import time
 import _thread
+import os.path
 
 DEBUT = "Début"
 FIN = "Fin"
@@ -314,19 +315,24 @@ class Ui_MainWindow(object):
         for x in range(start-1,end):
             current = None
             try:
+
                 if(bothFlux):
                     current = self.playlist[x].getbest()
                 else:
                     current = self.playlist[x].getbestaudio()
                 self.la_index.setText(str(x-start+2) + "/" + str(endPrint))
-                self.la_current.setText(self.playlist[x].title)
+                title = self.playlist[x].title
+                self.la_current.setText(title)
                 #qRatio = queue.LifoQueue()
                 self.qRatio = 0
                 self.saveRatio = 0
                 _thread.start_new_thread(self.affichage, ())
-                current.download(filepath=fileName, quiet=True, callback=self.updateData)
-            except Exception:
-                print("ERROR")
+                ext = current.extension
+                name =str(x + 1) + " - " + title.replace("/", "-").replace("\\", "-") + '.' + ext
+                fullPath = os.path.join(fileName, name)
+                current.download(filepath=fullPath , quiet=True, callback=self.updateData)
+            except Exception as e:
+                print("ERROR", e)
                 self.la_eta.setText("Erreur lors du téléchargement n°: " + str(x-start+2) + "\nLa vidéo est temporairement bloquée par des droits d'auteur, veuillez réessayer plus tard.")
 
 
